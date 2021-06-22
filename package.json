@@ -1,0 +1,61 @@
+{
+  "name": "@hexlabs/query-ts",
+  "author": "hexlabs.io",
+  "version": "0.1.0",
+  "description": "",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "homepage": "https://github.com/hexlabsio/query-ts#readme",
+  "scripts": {
+    "build": "webpack",
+    "prebuild": "npm run lint",
+    "lint": "eslint src --ext .ts",
+    "test": "npx jest --runInBand --detectOpenHandles --colors --verbose --reporters=default --coverage",
+    "prepare": "husky install"
+  },
+  "keywords": [
+    "query"
+  ],
+  "devDependencies": {
+    "@types/jest": "^26.0.21",
+    "@types/node": "^14.14.35",
+    "@typescript-eslint/eslint-plugin": "^4.18.0",
+    "@typescript-eslint/parser": "^4.18.0",
+    "eslint": "^7.22.0",
+    "husky": "^5.2.0",
+    "jest": "^26.6.3",
+    "jest-mock-extended": "^1.0.13",
+    "terser-webpack-plugin": "^5.1.3",
+    "ts-jest": "^26.5.4",
+    "ts-loader": "^8.0.18",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.3",
+    "webpack": "^5.40.0",
+    "webpack-cli": "^4.5.0"
+  },
+  "eslintConfig": {
+    "root": true,
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+      "@typescript-eslint"
+    ],
+    "extends": [
+      "eslint:recommended",
+      "plugin:@typescript-eslint/eslint-recommended",
+      "plugin:@typescript-eslint/recommended"
+    ],
+    "rules": {
+      "@typescript-eslint/ban-types": 0,
+      "@typescript-eslint/no-explicit-any": 0
+    }
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "globals": {
+      "ts-jest": {
+        "tsconfig": "tsconfig.json"
+      }
+    }
+  }
+}
